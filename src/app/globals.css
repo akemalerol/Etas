@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+@theme {
+  --color-smoke-950: #16120F;
+  --color-smoke-900: #1C1712;
+  --color-smoke-850: #211A14;
+  --color-smoke-800: #2A211B;
+  --color-ember: #FF4D1C;
+  --color-flame: #FFB23E;
+  --color-bone: #F2E8DC;
+  --color-brass: #9C7A4B;
+
+  --font-display: var(--font-anton), sans-serif;
+  --font-body: var(--font-schibsted), sans-serif;
+  --font-utility: var(--font-space), sans-serif;
+
+  --radius-kz: 8px;
+}
+
+/* Global resets */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background: #16120F;
+  color: #F2E8DC;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: #FF4D1C;
+  color: #16120F;
+}
+
+/* Placeholder */
+input::placeholder,
+textarea::placeholder {
+  color: rgba(242, 232, 220, 0.35);
+}
+
+/* Hero animations */
+@keyframes kz-rise {
+  from { transform: translateY(110%); }
+  to   { transform: translateY(0); }
+}
+
+@keyframes kz-fade {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes kz-marquee {
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+
+/* Focus ring - global */
+:focus-visible {
+  outline: 2px solid #FFB23E;
+  outline-offset: 3px;
+}
+
+/* WhatsApp sticky button */
+.kz-whatsapp {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 50;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #FF4D1C;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+  transition: background 150ms ease-out;
+  text-decoration: none;
+}
+.kz-whatsapp:hover { background: #FFB23E; }
+.kz-whatsapp:focus-visible { outline: 2px solid #FFB23E; outline-offset: 3px; }
+
+/* Nav link hover */
+.kz-nav-link { transition: color 150ms ease-out; }
+.kz-nav-link:hover { color: #FFB23E !important; }
+
+/* Card hover */
+.kz-card {
+  transition: transform 150ms ease-out, border-color 150ms ease-out;
+}
+.kz-card:hover {
+  transform: translateY(-2px);
+  border-color: #9C7A4B !important;
+}
+
+/* CTA button ember */
+.kz-btn-ember {
+  transition: background 150ms ease-out;
+}
+.kz-btn-ember:hover { background: #FFB23E !important; }
+
+/* CTA button dark */
+.kz-btn-dark {
+  transition: color 150ms ease-out;
+}
+.kz-btn-dark:hover { color: #FFB23E !important; }
+
+/* WhatsApp outline button */
+.kz-btn-outline {
+  transition: border-color 150ms ease-out, color 150ms ease-out;
+}
+.kz-btn-outline:hover {
+  border-color: #FFB23E !important;
+  color: #FFB23E !important;
+}
+
+/* Footer link hover */
+.kz-footer-link:hover { color: #FF4D1C !important; }
+
+/* Marquee animation */
+.kz-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: kz-marquee 32s linear infinite;
+}
+
+/* Input focus */
+.kz-input:focus {
+  border-color: #9C7A4B !important;
+  outline: 2px solid rgba(156,122,75,0.45) !important;
+  outline-offset: 1px !important;
+}
+
+/* Select focus */
+.kz-select:focus {
+  border-color: #9C7A4B !important;
+  outline: 2px solid rgba(156,122,75,0.45) !important;
+  outline-offset: 1px !important;
+}
