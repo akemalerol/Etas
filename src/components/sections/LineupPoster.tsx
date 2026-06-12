@@ -41,7 +41,7 @@ export default function LineupPoster() {
             lineHeight: 1,
             letterSpacing: "0.16em",
             textTransform: "uppercase",
-            background: "linear-gradient(90deg, #FF4D1C, #FFB23E)",
+            background: "linear-gradient(90deg, #DC2626, #22C55E)",
             WebkitBackgroundClip: "text",
             backgroundClip: "text",
             color: "transparent",
@@ -61,7 +61,7 @@ export default function LineupPoster() {
             color: "#F2E8DC",
           }}
         >
-          Köfte <span style={{ color: "#FF4D1C" }}>•</span> Kebap
+          Köfte <span style={{ color: "#DC2626" }}>•</span> Kebap
         </p>
 
         <p
@@ -74,7 +74,7 @@ export default function LineupPoster() {
             color: "#9C7A4B",
           }}
         >
-          Dondurma • Kahve • Fresh
+          Dondurma • Kahve
         </p>
 
         <div
@@ -100,7 +100,7 @@ export default function LineupPoster() {
               color: "#F2E8DC",
             }}
           >
-            Her festivalde sahnede
+            Her festivalde yanınızdayız
           </p>
         </div>
       </div>

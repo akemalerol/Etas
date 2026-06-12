@@ -1,79 +1,75 @@
 export type MenuItem = {
   name: string;
-  price: string;
   description?: string;
+  tag?: string;
 };
 
 export type MenuSection = {
   tag: string;
   title: string;
-  titleHtml?: string;
   items: MenuItem[];
+  color?: string;
 };
 
 export const menuSections: MenuSection[] = [
   {
     tag: "Headliner",
     title: "DÖNER",
+    color: "#DC2626",
     items: [
       {
         name: "Et Döner Dürüm",
-        price: "₺220",
-        description: "Lavaş, közlenmiş biber, soğan-sumak",
+        description: "Lavaş, ızgara biber, soğan-sumak",
+        tag: "En çok tercih edilen",
       },
       {
         name: "Et Döner Porsiyon",
-        price: "₺320",
-        description: "Tereyağlı pilav üstü, közlenmiş domates",
+        description: "Tereyağlı pilav üstü, ızgara domates",
       },
       {
         name: "Tavuk Döner Dürüm",
-        price: "₺160",
-        description: "Marine tavuk, turşu, akçaağaç-biber sos",
+        description: "Marine tavuk, turşu, biber sos",
       },
       {
         name: "Festival Box",
-        price: "₺380",
-        description: "Dürüm + yayık ayran + közde patates",
+        description: "Dürüm + yayık ayran + patates",
+        tag: "Festival özel",
       },
     ],
   },
   {
-    tag: "Sahne arkası",
-    title: "KÖFTE • KEBAP",
+    tag: "Stand Yıldızları",
+    title: "KÖFTE & KEBAP",
+    color: "#22C55E",
     items: [
       {
         name: "Izgara Köfte Ekmek",
-        price: "₺180",
-        description: "Közde köfte, piyaz soğanı, taş fırın ekmeği",
+        description: "Izgara köfte, piyaz soğanı, taş fırın ekmeği",
       },
       {
         name: "Adana Dürüm",
-        price: "₺240",
-        description: "Zırh kıyma, közlenmiş biber, maydanozlu soğan",
+        description: "Zırh kıyma, ızgara biber, maydanozlu soğan",
       },
       {
         name: "Kuzu Şiş Porsiyon",
-        price: "₺350",
-        description: "Pirinç şişte kuzu, közde domates-biber",
+        description: "Pirinç şişte kuzu, ızgara domates-biber",
       },
     ],
   },
   {
-    tag: "Soğuk sahne",
-    title: "DONDURMA • KAHVE • FRESH",
+    tag: "Tatlı & İçecek",
+    title: "DONDURMA & KAHVE",
+    color: "#9C7A4B",
     items: [
       {
         name: "Maraş Dondurma",
-        price: "₺90",
         description: "Külahta, keçi sütü — kesme şov dahil",
       },
-      { name: "Sıkma Portakal", price: "₺80" },
-      { name: "Yayık Ayran", price: "₺50" },
+      { name: "Sıkma Portakal", description: "Günlük taze sıkım" },
+      { name: "Yayık Ayran", description: "Geleneksel yayık usulü" },
       {
         name: "Türk Kahvesi",
-        price: "₺70",
-        description: "Közde pişer — sahnenin en yavaş işi",
+        description: "Geleneksel pişirim",
       },
     ],
   },

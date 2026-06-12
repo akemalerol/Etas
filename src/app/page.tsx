@@ -12,7 +12,7 @@ import CtaBand from "@/components/sections/CtaBand";
 export const metadata: Metadata = {
   title: "KÖZBAŞI — Festival Gastronomi & Yerinde Döner Kesimi",
   description:
-    "Festival, konser ve özel günlerde yerinde döner kesimi. Türkiye geneli stand kurulumu, taze malzeme, kesim şov. Teklif için hemen yazın.",
+    "Festival, konser ve özel günlerde yerinde döner kesimi. İstanbul merkezli stand kurulumu, taze malzeme, kesim şov. Teklif için hemen yazın.",
 };
 
 export default function HomePage() {
@@ -27,7 +27,7 @@ export default function HomePage() {
         <StatsSection />
         <SchedulePreview />
         <CtaBand
-          heading="Sahnenizi ayarlayalım"
+          heading="Etkinliğinizi ayarlayalım"
           subtext="48 saat içinde teklif dönüyoruz"
         />
       </main>

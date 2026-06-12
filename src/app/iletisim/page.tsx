@@ -42,7 +42,7 @@ export default function IletisimPage() {
                 color: "#F2E8DC",
               }}
             >
-              Sahneyi konuşalım
+              Etkinliğinizi planlayalım
             </h1>
             <p
               style={{
@@ -174,7 +174,7 @@ export default function IletisimPage() {
                 >
                   Bomonti, Şişli — İstanbul
                   <br />
-                  Çalışma alanı: Türkiye geneli
+                  Çalışma alanı: İstanbul ve çevresi
                 </p>
               </div>
 
@@ -206,7 +206,7 @@ export default function IletisimPage() {
                   }}
                 >
                   Formu doldurun → 48 saatte teklif → keşif görüşmesi →
-                  standı kurar, sahneyi devralırız.
+                  standı kurar, etkinliğinizi şova dönüştürürüz.
                 </p>
               </div>
             </div>

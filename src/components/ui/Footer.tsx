@@ -46,7 +46,7 @@ export default function Footer({ variant = "light" }: FooterProps) {
                 }}
               >
                 {siteConfig.name}
-                <span style={{ color: "#FF4D1C" }}>.</span>
+                <span style={{ color: "#DC2626" }}>.</span>
               </p>
               <p
                 style={{
@@ -57,7 +57,7 @@ export default function Footer({ variant = "light" }: FooterProps) {
                   maxWidth: 280,
                 }}
               >
-                Festival gastronomi markası. Türkiye genelinde yerinde kesim ve
+                İstanbul merkezli festival gastronomi markası. Yerinde kesim ve
                 stand kurulumu.
               </p>
             </div>
@@ -87,6 +87,7 @@ export default function Footer({ variant = "light" }: FooterProps) {
                 {[
                   { href: "/menu", label: "Menü" },
                   { href: "/etkinlikler", label: "Etkinlikler" },
+                  { href: "/hakkimizda", label: "Hakkımızda" },
                   { href: "/iletisim", label: "İletişim" },
                 ].map((item) => (
                   <Link
@@ -185,7 +186,7 @@ export default function Footer({ variant = "light" }: FooterProps) {
               }}
             >
               {siteConfig.name}
-              <span style={{ color: "#FF4D1C" }}>.</span>
+              <span style={{ color: "#DC2626" }}>.</span>
             </p>
             <div
               style={{

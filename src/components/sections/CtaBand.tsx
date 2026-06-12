@@ -14,7 +14,7 @@ export default function CtaBand({
   return (
     <section
       style={{
-        background: "linear-gradient(90deg, #FF4D1C, #FFB23E)",
+        background: "linear-gradient(90deg, #DC2626, #22C55E)",
         padding: "72px 0",
       }}
     >

@@ -6,7 +6,7 @@ const STATS = [
   { target: 120, suffix: "+", label: "Etkinlik" },
   { target: 250000, suffix: "+", label: "Porsiyon servis" },
   { target: 14, suffix: "", label: "Şehir" },
-  { target: 8, suffix: "", label: "Yıl sahnede" },
+  { target: 8, suffix: "", label: "Yıl deneyim" },
 ] as const;
 
 function formatTR(n: number) {
@@ -108,7 +108,7 @@ export default function StatsSection() {
                 }}
               >
                 {formatTR(counts[i])}
-                <span style={{ color: "#FF4D1C" }}>{stat.suffix}</span>
+                <span style={{ color: "#DC2626" }}>{stat.suffix}</span>
               </p>
               <p
                 style={{

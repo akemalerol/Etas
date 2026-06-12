@@ -5,8 +5,8 @@
   --color-smoke-900: #1C1712;
   --color-smoke-850: #211A14;
   --color-smoke-800: #2A211B;
-  --color-ember: #FF4D1C;
-  --color-flame: #FFB23E;
+  --color-ember: #DC2626;
+  --color-flame: #22C55E;
   --color-bone: #F2E8DC;
   --color-brass: #9C7A4B;
 
@@ -35,7 +35,7 @@ body {
 }
 
 ::selection {
-  background: #FF4D1C;
+  background: #DC2626;
   color: #16120F;
 }
 
@@ -66,7 +66,7 @@ textarea::placeholder {
 
 /* Focus ring - global */
 :focus-visible {
-  outline: 2px solid #FFB23E;
+  outline: 2px solid #22C55E;
   outline-offset: 3px;
 }
 
@@ -79,7 +79,7 @@ textarea::placeholder {
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: #FF4D1C;
+  background: #DC2626;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -87,12 +87,12 @@ textarea::placeholder {
   transition: background 150ms ease-out;
   text-decoration: none;
 }
-.kz-whatsapp:hover { background: #FFB23E; }
-.kz-whatsapp:focus-visible { outline: 2px solid #FFB23E; outline-offset: 3px; }
+.kz-whatsapp:hover { background: #22C55E; }
+.kz-whatsapp:focus-visible { outline: 2px solid #22C55E; outline-offset: 3px; }
 
 /* Nav link hover */
 .kz-nav-link { transition: color 150ms ease-out; }
-.kz-nav-link:hover { color: #FFB23E !important; }
+.kz-nav-link:hover { color: #22C55E !important; }
 
 /* Card hover */
 .kz-card {
@@ -107,25 +107,25 @@ textarea::placeholder {
 .kz-btn-ember {
   transition: background 150ms ease-out;
 }
-.kz-btn-ember:hover { background: #FFB23E !important; }
+.kz-btn-ember:hover { background: #22C55E !important; }
 
 /* CTA button dark */
 .kz-btn-dark {
   transition: color 150ms ease-out;
 }
-.kz-btn-dark:hover { color: #FFB23E !important; }
+.kz-btn-dark:hover { color: #22C55E !important; }
 
 /* WhatsApp outline button */
 .kz-btn-outline {
   transition: border-color 150ms ease-out, color 150ms ease-out;
 }
 .kz-btn-outline:hover {
-  border-color: #FFB23E !important;
-  color: #FFB23E !important;
+  border-color: #22C55E !important;
+  color: #22C55E !important;
 }
 
 /* Footer link hover */
-.kz-footer-link:hover { color: #FF4D1C !important; }
+.kz-footer-link:hover { color: #DC2626 !important; }
 
 /* Marquee animation */
 .kz-marquee-track {

@@ -51,7 +51,7 @@ export default function SchedulePreview() {
                 color: "#F2E8DC",
               }}
             >
-              Sahne takvimi
+              Etkinlik Takvimi
             </h2>
           </div>
           <Link
@@ -111,7 +111,7 @@ export default function SchedulePreview() {
                     fontSize: 32,
                     fontWeight: 700,
                     lineHeight: 1,
-                    color: "#FF4D1C",
+                    color: "#DC2626",
                   }}
                 >
                   {ev.day}

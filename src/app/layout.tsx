@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.name}`,
   },
   description:
-    "Festival, konser ve özel günlerde yerinde döner kesimi ve catering hizmeti. Türkiye geneli stand kurulumu, köfte, kebap ve daha fazlası.",
+    "Festival, konser ve özel günlerde yerinde döner kesimi ve catering hizmeti. İstanbul merkezli stand kurulumu, köfte, kebap ve daha fazlası.",
   keywords: ["festival catering", "konser alanı yemek standı", "yerinde döner kesimi", "düğünde döner", "etkinlik catering"],
   openGraph: {
     siteName: siteConfig.name,

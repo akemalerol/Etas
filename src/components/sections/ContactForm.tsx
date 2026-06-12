@@ -69,7 +69,7 @@ export default function ContactForm() {
             style={inputStyle}
           />
           {state.errors?.ad && (
-            <span style={{ fontSize: 12, color: "#FF4D1C" }}>
+            <span style={{ fontSize: 12, color: "#DC2626" }}>
               {state.errors.ad[0]}
             </span>
           )}
@@ -86,7 +86,7 @@ export default function ContactForm() {
             style={inputStyle}
           />
           {state.errors?.telefon && (
-            <span style={{ fontSize: 12, color: "#FF4D1C" }}>
+            <span style={{ fontSize: 12, color: "#DC2626" }}>
               {state.errors.telefon[0]}
             </span>
           )}
@@ -189,7 +189,7 @@ export default function ContactForm() {
             fontSize: 14,
             fontWeight: 500,
             letterSpacing: "0.06em",
-            color: state.success ? "#FFB23E" : "#FF4D1C",
+            color: state.success ? "#22C55E" : "#DC2626",
           }}
         >
           {state.message}
@@ -206,7 +206,7 @@ export default function ContactForm() {
           justifyContent: "center",
           minHeight: 52,
           padding: "16px 36px",
-          background: "#FF4D1C",
+          background: "#DC2626",
           color: "#16120F",
           border: "none",
           borderRadius: 8,

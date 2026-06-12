@@ -12,7 +12,7 @@ const services = [
   {
     num: "03",
     title: "Yerinde Kesim Şov",
-    body: "Usta, köz ve bıçak sahnede. Kesim anı etkinliğin kendisi olur — kalabalık standın önünde toplanır.",
+    body: "Usta ve bıçak etkinlikte. Kesim anı etkinliğin kendisi olur — kalabalık standın önünde toplanır.",
   },
 ];
 
@@ -57,7 +57,7 @@ export default function ServicesSection() {
             maxWidth: 620,
           }}
         >
-          Üç sahne, tek ekip
+          Dört hizmet, tek ekip
         </h2>
 
         <div

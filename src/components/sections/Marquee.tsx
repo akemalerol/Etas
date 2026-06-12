@@ -5,7 +5,7 @@ export default function Marquee() {
   return (
     <div
       style={{
-        background: "#FF4D1C",
+        background: "#DC2626",
         overflow: "hidden",
         padding: "13px 0",
       }}

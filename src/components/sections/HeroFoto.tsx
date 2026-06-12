@@ -19,7 +19,7 @@ export default function HeroFoto() {
           position: "absolute",
           inset: 0,
           background:
-            "radial-gradient(ellipse at 60% 30%, rgba(255,77,28,0.18) 0%, transparent 60%), radial-gradient(ellipse at 80% 70%, rgba(255,178,62,0.12) 0%, transparent 55%), #16120F",
+            "radial-gradient(ellipse at 60% 30%, rgba(220,38,38,0.18) 0%, transparent 60%), radial-gradient(ellipse at 80% 70%, rgba(34,197,94,0.12) 0%, transparent 55%), #16120F",
         }}
         aria-hidden="true"
       />
@@ -89,7 +89,7 @@ export default function HeroFoto() {
                     "kz-rise 0.6s cubic-bezier(0,0,0.2,1) 0.08s both",
                 }}
               >
-                Sahnede
+                Festivalde
               </span>
             </span>
             <span style={{ display: "block", overflow: "hidden" }}>
@@ -98,7 +98,7 @@ export default function HeroFoto() {
                   display: "block",
                   animation:
                     "kz-rise 0.6s cubic-bezier(0,0,0.2,1) 0.16s both",
-                  background: "linear-gradient(90deg, #FF4D1C, #FFB23E)",
+                  background: "linear-gradient(90deg, #DC2626, #22C55E)",
                   WebkitBackgroundClip: "text",
                   backgroundClip: "text",
                   color: "transparent",
@@ -141,7 +141,7 @@ export default function HeroFoto() {
                 alignItems: "center",
                 minHeight: 48,
                 padding: "14px 30px",
-                background: "#FF4D1C",
+                background: "#DC2626",
                 color: "#16120F",
                 borderRadius: 8,
                 fontFamily: "var(--font-utility)",

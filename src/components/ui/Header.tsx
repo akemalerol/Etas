@@ -2,12 +2,13 @@ import Link from "next/link";
 import { siteConfig } from "@/content/site";
 
 type HeaderProps = {
-  activePage?: "menu" | "etkinlikler" | "iletisim";
+  activePage?: "menu" | "etkinlikler" | "iletisim" | "hakkimizda";
 };
 
 const navItems = [
   { href: "/menu", label: "Menü", key: "menu" },
   { href: "/etkinlikler", label: "Etkinlikler", key: "etkinlikler" },
+  { href: "/hakkimizda", label: "Hakkımızda", key: "hakkimizda" },
   { href: "/iletisim", label: "İletişim", key: "iletisim" },
 ] as const;
 
@@ -43,7 +44,7 @@ export default function Header({ activePage }: HeaderProps) {
           }}
         >
           {siteConfig.name}
-          <span style={{ color: "#FF4D1C" }}>.</span>
+          <span style={{ color: "#DC2626" }}>.</span>
         </Link>
 
         <nav
@@ -66,7 +67,7 @@ export default function Header({ activePage }: HeaderProps) {
                 textTransform: "uppercase",
                 color:
                   activePage === item.key
-                    ? "#FFB23E"
+                    ? "#22C55E"
                     : "rgba(242,232,220,0.75)",
                 textDecoration: "none",
                 padding: "8px 0",
@@ -84,7 +85,7 @@ export default function Header({ activePage }: HeaderProps) {
               alignItems: "center",
               minHeight: 44,
               padding: "10px 22px",
-              background: "#FF4D1C",
+              background: "#DC2626",
               color: "#16120F",
               borderRadius: 8,
               fontFamily: "var(--font-utility)",

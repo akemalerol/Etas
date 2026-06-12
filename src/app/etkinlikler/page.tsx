@@ -2,15 +2,45 @@ import type { Metadata } from "next";
 import Header from "@/components/ui/Header";
 import Footer from "@/components/ui/Footer";
 import CtaBand from "@/components/sections/CtaBand";
-import { events, type BadgeType } from "@/content/events";
+import {
+  events,
+  type BadgeType,
+  type EventCategory,
+  categoryLabels,
+  categoryColors,
+} from "@/content/events";
 
 export const metadata: Metadata = {
   title: "Etkinlikler",
   description:
-    "Közbaşı'nın 2026 sahne takvimi. Festival, konser ve etkinliklerde nerede olduğumuzu görün.",
+    "Közbaşı'nın 2026 etkinlik takvimi. Festival, konser, stand ve özel günlerde nerede olduğumuzu görün.",
 };
 
-function Badge({ type }: { type: BadgeType }) {
+function CategoryBadge({ category }: { category: EventCategory }) {
+  const color = categoryColors[category];
+  const label = categoryLabels[category];
+  return (
+    <span
+      style={{
+        fontFamily: "var(--font-utility)",
+        fontSize: 10,
+        fontWeight: 700,
+        letterSpacing: "0.18em",
+        textTransform: "uppercase",
+        color,
+        border: `1px solid ${color}50`,
+        background: `${color}18`,
+        borderRadius: 4,
+        padding: "3px 8px",
+        whiteSpace: "nowrap",
+      }}
+    >
+      {label}
+    </span>
+  );
+}
+
+function StatusBadge({ type }: { type: BadgeType }) {
   if (type === "sahnedeyiz") {
     return (
       <span
@@ -20,15 +50,15 @@ function Badge({ type }: { type: BadgeType }) {
           fontWeight: 700,
           letterSpacing: "0.16em",
           textTransform: "uppercase",
-          color: "#FFB23E",
-          border: "1px solid rgba(255,178,62,0.4)",
-          background: "rgba(255,178,62,0.1)",
+          color: "#22C55E",
+          border: "1px solid rgba(34,197,94,0.4)",
+          background: "rgba(34,197,94,0.1)",
           borderRadius: 8,
           padding: "8px 14px",
           whiteSpace: "nowrap",
         }}
       >
-        Sahnedeyiz
+        Katılıyoruz
       </span>
     );
   }
@@ -91,7 +121,7 @@ export default function EtkinliklerPage() {
                 color: "#9C7A4B",
               }}
             >
-              Yaz 2026 · Sahne takvimi
+              Yaz 2026 · Etkinlik takvimi
             </p>
             <h1
               style={{
@@ -115,13 +145,28 @@ export default function EtkinliklerPage() {
                 color: "rgba(242,232,220,0.75)",
               }}
             >
-              Bu yaz standın kurulacağı sahneler. Koçanı kapan, közün önünde
-              buluşuruz.
+              Festival, konser, stand ve özel günlerde bu yaz neredeyiz — tam liste.
             </p>
+
+            {/* Kategori göstergesi */}
+            <div
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                gap: 10,
+                marginTop: 24,
+              }}
+            >
+              {(
+                ["festival", "konser", "stand", "ozel-gun"] as EventCategory[]
+              ).map((cat) => (
+                <CategoryBadge key={cat} category={cat} />
+              ))}
+            </div>
           </div>
         </section>
 
-        {/* Bilet koçanları */}
+        {/* Etkinlik listesi */}
         <section style={{ padding: "48px 64px 96px" }}>
           <div
             style={{
@@ -166,7 +211,7 @@ export default function EtkinliklerPage() {
                       fontSize: 40,
                       fontWeight: 700,
                       lineHeight: 1,
-                      color: "#FF4D1C",
+                      color: categoryColors[ev.category],
                     }}
                   >
                     {ev.day}
@@ -223,6 +268,16 @@ export default function EtkinliklerPage() {
                   }}
                 >
                   <div>
+                    <div
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 10,
+                        marginBottom: 8,
+                      }}
+                    >
+                      <CategoryBadge category={ev.category} />
+                    </div>
                     <h2
                       style={{
                         margin: 0,
@@ -261,7 +316,7 @@ export default function EtkinliklerPage() {
                       {ev.standType}
                     </p>
                   </div>
-                  <Badge type={ev.badge} />
+                  <StatusBadge type={ev.badge} />
                 </div>
               </div>
             ))}
@@ -269,7 +324,7 @@ export default function EtkinliklerPage() {
         </section>
 
         <CtaBand
-          heading="Sahnenize bizi çağırın"
+          heading="Etkinliğinize bizi çağırın"
           subtext="Festival, konser, kurumsal — takvimde yerinizi ayırtın"
         />
       </main>
