@@ -1,13 +1,15 @@
-const TEXT =
-  "Yerinde kesim  •  Festival  •  Konser  •  Özel gün  •  Kurumsal  •  ";
-
 export default function Marquee() {
+  const text =
+    "Yerinde kesim  ◆  Festival  ◆  Konser  ◆  Özel gün  ◆  Kurumsal  ◆  ";
+
   return (
     <div
       style={{
-        background: "#DC2626",
+        background: "#1E7A3D",
         overflow: "hidden",
-        padding: "13px 0",
+        padding: "14px 0",
+        borderTop: "3px solid #16130E",
+        borderBottom: "3px solid #16130E",
       }}
       aria-hidden="true"
     >
@@ -17,28 +19,30 @@ export default function Marquee() {
             display: "block",
             whiteSpace: "nowrap",
             fontFamily: "var(--font-display)",
-            fontSize: 17,
-            letterSpacing: "0.1em",
+            fontWeight: 600,
+            fontSize: 18,
+            letterSpacing: "0.08em",
             textTransform: "uppercase",
-            color: "#16120F",
+            color: "#FBF4E6",
           }}
         >
-          {TEXT}
-          {TEXT}
+          {text}
+          {text}
         </span>
         <span
           style={{
             display: "block",
             whiteSpace: "nowrap",
             fontFamily: "var(--font-display)",
-            fontSize: 17,
-            letterSpacing: "0.1em",
+            fontWeight: 600,
+            fontSize: 18,
+            letterSpacing: "0.08em",
             textTransform: "uppercase",
-            color: "#16120F",
+            color: "#FBF4E6",
           }}
         >
-          {TEXT}
-          {TEXT}
+          {text}
+          {text}
         </span>
       </div>
     </div>

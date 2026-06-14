@@ -14,19 +14,26 @@ export default function IletisimPage() {
   return (
     <>
       <Header activePage="iletisim" />
-      <main style={{ background: "#16120F", color: "#F2E8DC" }}>
-        {/* Başlık */}
-        <section style={{ padding: "88px 64px 16px" }}>
-          <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+      <main>
+        {/* Hero */}
+        <section
+          style={{
+            background: "#E01E26",
+            color: "#FBF4E6",
+            padding: "80px 48px 64px",
+            textAlign: "center",
+          }}
+        >
+          <div style={{ maxWidth: 900, margin: "0 auto" }}>
             <p
               style={{
                 margin: 0,
-                fontFamily: "var(--font-utility)",
-                fontSize: 13,
-                fontWeight: 500,
-                letterSpacing: "0.2em",
+                fontFamily: "var(--font-display)",
+                fontSize: 14,
+                fontWeight: 600,
+                letterSpacing: "0.26em",
                 textTransform: "uppercase",
-                color: "#9C7A4B",
+                color: "#36A85A",
               }}
             >
               Teklif al
@@ -35,32 +42,32 @@ export default function IletisimPage() {
               style={{
                 margin: "16px 0 0",
                 fontFamily: "var(--font-display)",
-                fontSize: "clamp(44px, 7vw, 80px)",
-                lineHeight: 1.02,
-                letterSpacing: "-0.01em",
+                fontWeight: 700,
+                fontSize: "clamp(52px, 9vw, 110px)",
+                lineHeight: 0.9,
+                letterSpacing: "0.02em",
                 textTransform: "uppercase",
-                color: "#F2E8DC",
+                color: "#FBF4E6",
               }}
             >
-              Etkinliğinizi planlayalım
+              Sahneyi konuşalım
             </h1>
             <p
               style={{
-                margin: "20px 0 0",
-                maxWidth: 480,
-                fontSize: 17,
+                margin: "24px auto 0",
+                maxWidth: 500,
+                fontSize: 18,
                 lineHeight: 1.6,
-                color: "rgba(242,232,220,0.75)",
+                color: "rgba(251,244,230,0.9)",
               }}
             >
-              Etkinliğinizi anlatın; 48 saat içinde kapasite, menü ve fiyat
-              teklifiyle dönelim.
+              Etkinliğinizi anlatın; 48 saat içinde kapasite, menü ve fiyat teklifiyle dönelim.
             </p>
           </div>
         </section>
 
-        {/* Form + İletişim bilgileri */}
-        <section style={{ padding: "48px 64px 104px" }}>
+        {/* Form + İletişim */}
+        <section style={{ background: "#FBF4E6", padding: "72px 48px 104px" }}>
           <div
             style={{
               maxWidth: 1100,
@@ -73,45 +80,41 @@ export default function IletisimPage() {
           >
             <ContactForm />
 
-            {/* Sağ kolon — iletişim bilgileri */}
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: 36,
-              }}
-            >
-              <div>
+            {/* Sağ kolon */}
+            <div style={{ display: "flex", flexDirection: "column", gap: 28 }}>
+              {/* Doğrudan ulaş */}
+              <div
+                style={{
+                  background: "#ffffff",
+                  border: "2px solid #16130E",
+                  borderRadius: 18,
+                  padding: "32px 28px",
+                  boxShadow: "10px 10px 0 #1E7A3D",
+                }}
+              >
                 <p
                   style={{
                     margin: 0,
-                    fontFamily: "var(--font-utility)",
+                    fontFamily: "var(--font-display)",
                     fontSize: 12,
-                    fontWeight: 700,
-                    letterSpacing: "0.18em",
+                    fontWeight: 600,
+                    letterSpacing: "0.2em",
                     textTransform: "uppercase",
-                    color: "#9C7A4B",
+                    color: "rgba(22,19,14,0.5)",
                   }}
                 >
                   Doğrudan ulaşın
                 </p>
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: 14,
-                    marginTop: 18,
-                  }}
-                >
+                <div style={{ display: "flex", flexDirection: "column", gap: 14, marginTop: 18 }}>
                   <a
                     href={siteConfig.phoneHref}
-                    className="kz-nav-link"
                     style={{
-                      fontFamily: "var(--font-utility)",
+                      fontFamily: "var(--font-display)",
                       fontVariantNumeric: "tabular-nums",
-                      fontSize: 22,
                       fontWeight: 700,
-                      color: "#F2E8DC",
+                      fontSize: 26,
+                      letterSpacing: "0.01em",
+                      color: "#16130E",
                       textDecoration: "none",
                     }}
                   >
@@ -119,101 +122,119 @@ export default function IletisimPage() {
                   </a>
                   <a
                     href={`mailto:${siteConfig.email}`}
-                    className="kz-nav-link"
                     style={{
-                      fontFamily: "var(--font-utility)",
-                      fontSize: 16,
+                      fontFamily: "var(--font-body)",
+                      fontSize: 15,
                       fontWeight: 500,
-                      letterSpacing: "0.04em",
-                      color: "rgba(242,232,220,0.8)",
+                      color: "rgba(22,19,14,0.7)",
                       textDecoration: "none",
                     }}
                   >
                     {siteConfig.email}
                   </a>
-                  <span
+                  <a
+                    href={siteConfig.whatsapp}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     style={{
-                      fontFamily: "var(--font-utility)",
-                      fontSize: 16,
-                      fontWeight: 500,
-                      letterSpacing: "0.04em",
-                      color: "rgba(242,232,220,0.8)",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: 8,
+                      fontFamily: "var(--font-display)",
+                      fontSize: 14,
+                      fontWeight: 600,
+                      letterSpacing: "0.08em",
+                      textTransform: "uppercase",
+                      color: "#FBF4E6",
+                      background: "#1E7A3D",
+                      padding: "12px 20px",
+                      borderRadius: 999,
+                      textDecoration: "none",
+                      width: "fit-content",
+                      marginTop: 4,
                     }}
                   >
-                    {siteConfig.instagram}
-                  </span>
+                    WhatsApp&rsquo;tan yaz
+                  </a>
+                  {siteConfig.instagram && (
+                    <p
+                      style={{
+                        margin: 0,
+                        fontFamily: "var(--font-body)",
+                        fontSize: 14,
+                        color: "rgba(22,19,14,0.55)",
+                      }}
+                    >
+                      {siteConfig.instagram}
+                    </p>
+                  )}
                 </div>
               </div>
 
+              {/* Merkez + Nasıl işler */}
               <div
                 style={{
-                  borderTop: "1px solid rgba(242,232,220,0.12)",
-                  paddingTop: 28,
+                  background: "#ffffff",
+                  border: "2px solid #16130E",
+                  borderRadius: 18,
+                  padding: "28px 28px",
                 }}
               >
                 <p
                   style={{
                     margin: 0,
-                    fontFamily: "var(--font-utility)",
+                    fontFamily: "var(--font-display)",
                     fontSize: 12,
-                    fontWeight: 700,
-                    letterSpacing: "0.18em",
+                    fontWeight: 600,
+                    letterSpacing: "0.2em",
                     textTransform: "uppercase",
-                    color: "#9C7A4B",
+                    color: "rgba(22,19,14,0.5)",
                   }}
                 >
                   Merkez
                 </p>
                 <p
                   style={{
-                    margin: "14px 0 0",
-                    fontSize: 16,
-                    lineHeight: 1.6,
-                    color: "rgba(242,232,220,0.8)",
+                    margin: "12px 0 0",
+                    fontSize: 15,
+                    lineHeight: 1.65,
+                    color: "rgba(22,19,14,0.75)",
                   }}
                 >
                   Bomonti, Şişli — İstanbul
                   <br />
-                  Çalışma alanı: İstanbul ve çevresi
+                  Çalışma alanı: Türkiye geneli
                 </p>
-              </div>
 
-              <div
-                style={{
-                  borderTop: "1px solid rgba(242,232,220,0.12)",
-                  paddingTop: 28,
-                }}
-              >
                 <p
                   style={{
-                    margin: 0,
-                    fontFamily: "var(--font-utility)",
+                    margin: "24px 0 0",
+                    fontFamily: "var(--font-display)",
                     fontSize: 12,
-                    fontWeight: 700,
-                    letterSpacing: "0.18em",
+                    fontWeight: 600,
+                    letterSpacing: "0.2em",
                     textTransform: "uppercase",
-                    color: "#9C7A4B",
+                    color: "rgba(22,19,14,0.5)",
                   }}
                 >
                   Nasıl işler
                 </p>
                 <p
                   style={{
-                    margin: "14px 0 0",
+                    margin: "12px 0 0",
                     fontSize: 15,
                     lineHeight: 1.7,
-                    color: "rgba(242,232,220,0.7)",
+                    color: "rgba(22,19,14,0.7)",
                   }}
                 >
-                  Formu doldurun → 48 saatte teklif → keşif görüşmesi →
-                  standı kurar, etkinliğinizi şova dönüştürürüz.
+                  Formu doldurun → 48 saatte teklif → keşif görüşmesi → standı kurar, etkinliğinizi şova dönüştürürüz.
                 </p>
               </div>
             </div>
           </div>
         </section>
       </main>
-      <Footer variant="light" />
+      <Footer variant="compact" />
     </>
   );
 }

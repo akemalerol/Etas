@@ -322,7 +322,7 @@ export default function HakkimizdaPage() {
           subtext="Festival, konser, kurumsal — teklif almak için yazın"
         />
       </main>
-      <Footer variant="light" />
+      <Footer variant="compact" />
     </>
   );
 }

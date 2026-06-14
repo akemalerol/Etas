@@ -6,7 +6,7 @@ const STATS = [
   { target: 120, suffix: "+", label: "Etkinlik" },
   { target: 250000, suffix: "+", label: "Porsiyon servis" },
   { target: 14, suffix: "", label: "Şehir" },
-  { target: 8, suffix: "", label: "Yıl deneyim" },
+  { target: 8, suffix: "", label: "Yıl sahnede" },
 ] as const;
 
 function formatTR(n: number) {
@@ -19,106 +19,97 @@ export default function StatsSection() {
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    const reduced = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
-
+    const reduced =
+      window.matchMedia &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduced) {
       setCounts(STATS.map((s) => s.target));
       setStarted(true);
       return;
     }
 
-    const observer = new IntersectionObserver(
+    const obs = new IntersectionObserver(
       (entries) => {
         if (entries.some((e) => e.isIntersecting) && !started) {
           setStarted(true);
-          observer.disconnect();
-
           const dur = 1300;
           const t0 = performance.now();
           const ease = (x: number) => 1 - Math.pow(1 - x, 3);
-
           const tick = (now: number) => {
             const p = Math.min(1, (now - t0) / dur);
             const e = ease(p);
             setCounts(STATS.map((s) => Math.round(s.target * e)));
             if (p < 1) requestAnimationFrame(tick);
           };
-
           requestAnimationFrame(tick);
+          obs.disconnect();
         }
       },
       { threshold: 0.3 }
     );
-
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    if (sectionRef.current) obs.observe(sectionRef.current);
+    return () => obs.disconnect();
+  }, [started]);
 
   return (
     <section
       ref={sectionRef}
       style={{
-        background: "#2A211B",
-        padding: "96px 0",
+        background: "#E01E26",
+        padding: "92px 0",
+        borderTop: "3px solid #16130E",
       }}
     >
-      <div
-        style={{
-          maxWidth: 1200,
-          margin: "0 auto",
-          padding: "0 64px",
-        }}
-      >
+      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 48px" }}>
         <p
           style={{
             margin: 0,
-            fontFamily: "var(--font-utility)",
-            fontSize: 13,
-            fontWeight: 500,
-            letterSpacing: "0.2em",
+            fontFamily: "var(--font-display)",
+            fontSize: 15,
+            fontWeight: 600,
+            letterSpacing: "0.18em",
             textTransform: "uppercase",
-            color: "#9C7A4B",
+            color: "#FBF4E6",
           }}
         >
           Sayılarla biz
         </p>
-
         <div
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-            gap: 32,
-            marginTop: 40,
+            gap: 28,
+            marginTop: 36,
           }}
         >
           {STATS.map((stat, i) => (
-            <div key={stat.label}>
+            <div
+              key={stat.label}
+              style={{ borderLeft: "3px solid rgba(251,244,230,0.35)", paddingLeft: 22 }}
+            >
               <p
                 style={{
                   margin: 0,
-                  fontFamily: "var(--font-utility)",
-                  fontVariantNumeric: "tabular-nums",
-                  fontSize: "clamp(44px, 5vw, 64px)",
+                  fontFamily: "var(--font-display)",
                   fontWeight: 700,
-                  lineHeight: 1,
-                  color: "#F2E8DC",
+                  fontVariantNumeric: "tabular-nums",
+                  fontSize: "clamp(48px, 5.4vw, 72px)",
+                  lineHeight: 0.95,
+                  color: "#FBF4E6",
                 }}
               >
                 {formatTR(counts[i])}
-                <span style={{ color: "#DC2626" }}>{stat.suffix}</span>
+                <span style={{ color: "#16130E" }}>{stat.suffix}</span>
               </p>
               <p
                 style={{
-                  margin: "12px 0 0",
-                  fontFamily: "var(--font-utility)",
-                  fontSize: 13,
-                  fontWeight: 500,
-                  letterSpacing: "0.14em",
+                  margin: "10px 0 0",
+                  fontFamily: "var(--font-display)",
+                  fontSize: 14,
+                  fontWeight: 600,
+                  letterSpacing: "0.12em",
                   textTransform: "uppercase",
-                  color: "rgba(242,232,220,0.6)",
+                  color: "rgba(251,244,230,0.82)",
                 }}
               >
                 {stat.label}

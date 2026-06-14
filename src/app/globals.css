@@ -1,149 +1,128 @@
 @import "tailwindcss";
 
 @theme {
-  --color-smoke-950: #16120F;
-  --color-smoke-900: #1C1712;
-  --color-smoke-850: #211A14;
-  --color-smoke-800: #2A211B;
-  --color-ember: #DC2626;
-  --color-flame: #22C55E;
-  --color-bone: #F2E8DC;
-  --color-brass: #9C7A4B;
+  --color-ink:    #16130E;
+  --color-pepper: #E01E26;
+  --color-herb:   #1E7A3D;
+  --color-bright: #36A85A;
+  --color-cream:  #FBF4E6;
+  --color-muted:  #8A7F6B;
 
-  --font-display: var(--font-anton), sans-serif;
-  --font-body: var(--font-schibsted), sans-serif;
-  --font-utility: var(--font-space), sans-serif;
-
-  --radius-kz: 8px;
+  --font-display: var(--font-oswald), sans-serif;
+  --font-body:    var(--font-hanken), sans-serif;
 }
 
-/* Global resets */
-*, *::before, *::after {
-  box-sizing: border-box;
-}
+*, *::before, *::after { box-sizing: border-box; }
 
-html, body {
-  margin: 0;
-  padding: 0;
-}
+html, body { margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
 
 body {
   font-family: var(--font-body);
-  background: #16120F;
-  color: #F2E8DC;
+  background: #FBF4E6;
+  color: #16130E;
   -webkit-font-smoothing: antialiased;
 }
 
-::selection {
-  background: #DC2626;
-  color: #16120F;
-}
+::selection { background: #1E7A3D; color: #FBF4E6; }
 
-/* Placeholder */
 input::placeholder,
-textarea::placeholder {
-  color: rgba(242, 232, 220, 0.35);
-}
+textarea::placeholder { color: rgba(22,19,14,0.4); }
 
-/* Hero animations */
-@keyframes kz-rise {
-  from { transform: translateY(110%); }
-  to   { transform: translateY(0); }
+/* ─── Keyframes ─── */
+@keyframes kz-rise    { from { transform: translateY(110%); } to { transform: translateY(0); } }
+@keyframes kz-fade    { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@keyframes kz-marquee { to   { transform: translateX(-50%); } }
+@keyframes kz-shave   { from { background-position: 0 center; } to { background-position: -260px center; } }
+@keyframes kz-smoke {
+  0%   { opacity: 0; transform: translate(0, 0) scale(0.6); }
+  22%  { opacity: 0.55; }
+  100% { opacity: 0; transform: translate(16px, -140px) scale(1.6); }
 }
-
-@keyframes kz-fade {
-  from { opacity: 0; transform: translateY(8px); }
-  to   { opacity: 1; transform: none; }
-}
-
-@keyframes kz-marquee {
-  to { transform: translateX(-50%); }
+@keyframes kz-coal {
+  0%, 100% { opacity: 0.5; transform: translateX(-50%) scale(0.94); }
+  50%       { opacity: 1;   transform: translateX(-50%) scale(1.06); }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  * { animation: none !important; transition: none !important; }
+  *, html { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
 
-/* Focus ring - global */
-:focus-visible {
-  outline: 2px solid #22C55E;
-  outline-offset: 3px;
-}
+/* ─── Focus ─── */
+:focus-visible { outline: 2px solid #1E7A3D; outline-offset: 3px; }
 
-/* WhatsApp sticky button */
+/* ─── WhatsApp FAB ─── */
 .kz-whatsapp {
-  position: fixed;
-  right: 24px;
-  bottom: 24px;
-  z-index: 50;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: #DC2626;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: fixed; right: 24px; bottom: 24px; z-index: 50;
+  width: 56px; height: 56px; border-radius: 50%;
+  background: #1E7A3D;
+  display: flex; align-items: center; justify-content: center;
   box-shadow: 0 8px 20px rgba(0,0,0,0.35);
   transition: background 150ms ease-out;
   text-decoration: none;
 }
-.kz-whatsapp:hover { background: #22C55E; }
-.kz-whatsapp:focus-visible { outline: 2px solid #22C55E; outline-offset: 3px; }
+.kz-whatsapp:hover { background: #155C2D; }
 
-/* Nav link hover */
+/* ─── Nav links ─── */
 .kz-nav-link { transition: color 150ms ease-out; }
-.kz-nav-link:hover { color: #22C55E !important; }
+.kz-nav-link:hover { color: #FBF4E6 !important; }
+.kz-nav-link-active { border-bottom: 2px solid #36A85A; }
 
-/* Card hover */
-.kz-card {
+/* ─── Card hover (ticket, event row) ─── */
+.kz-card-ticket {
+  transition: transform 150ms ease-out, box-shadow 150ms ease-out;
+}
+.kz-card-ticket:hover { transform: translateY(-3px); box-shadow: 8px 8px 0 #E01E26; }
+.kz-card-ticket--green:hover { transform: translateY(-3px); box-shadow: 8px 8px 0 #1E7A3D; }
+
+/* ─── Service card hover ─── */
+.kz-service-card {
+  transition: transform 150ms ease-out, box-shadow 150ms ease-out;
+}
+.kz-service-card:hover { transform: translateY(-4px); box-shadow: 8px 8px 0 #1E7A3D; }
+
+/* ─── Event row hover ─── */
+.kz-event-row {
   transition: transform 150ms ease-out, border-color 150ms ease-out;
 }
-.kz-card:hover {
-  transform: translateY(-2px);
-  border-color: #9C7A4B !important;
+.kz-event-row:hover { transform: translateY(-3px); border-color: #36A85A !important; }
+
+/* ─── Input focus ─── */
+.kz-input:focus, .kz-select:focus, .kz-textarea:focus {
+  border-color: #1E7A3D !important;
+  outline: none !important;
 }
 
-/* CTA button ember */
-.kz-btn-ember {
-  transition: background 150ms ease-out;
-}
-.kz-btn-ember:hover { background: #22C55E !important; }
-
-/* CTA button dark */
-.kz-btn-dark {
-  transition: color 150ms ease-out;
-}
-.kz-btn-dark:hover { color: #22C55E !important; }
-
-/* WhatsApp outline button */
-.kz-btn-outline {
-  transition: border-color 150ms ease-out, color 150ms ease-out;
-}
-.kz-btn-outline:hover {
-  border-color: #22C55E !important;
-  color: #22C55E !important;
-}
-
-/* Footer link hover */
-.kz-footer-link:hover { color: #DC2626 !important; }
-
-/* Marquee animation */
+/* ─── Marquee ─── */
 .kz-marquee-track {
   display: flex;
   width: max-content;
   animation: kz-marquee 32s linear infinite;
 }
 
-/* Input focus */
-.kz-input:focus {
-  border-color: #9C7A4B !important;
-  outline: 2px solid rgba(156,122,75,0.45) !important;
-  outline-offset: 1px !important;
+/* ─── Awning stripe ─── */
+.kz-awning {
+  height: 11px;
+  background: repeating-linear-gradient(45deg, #E01E26 0 22px, #FBF4E6 22px 44px, #1E7A3D 44px 66px);
 }
 
-/* Select focus */
-.kz-select:focus {
-  border-color: #9C7A4B !important;
-  outline: 2px solid rgba(156,122,75,0.45) !important;
-  outline-offset: 1px !important;
+/* ─── Green CTA pill button hover ─── */
+.kz-btn-green { transition: background 150ms ease-out; }
+.kz-btn-green:hover { background: #155C2D !important; }
+
+/* ─── Cream pill button hover ─── */
+.kz-btn-cream { transition: background 150ms ease-out; }
+.kz-btn-cream:hover { background: #ffffff !important; }
+
+/* ─── Ticket stub hover ─── */
+.kz-ticket-hover {
+  transition: transform 150ms ease-out, box-shadow 150ms ease-out;
+}
+.kz-ticket-hover:hover { transform: translateY(-3px); box-shadow: 8px 8px 0 #E01E26; }
+
+/* ─── Form input focus (new design) ─── */
+.kz-form-input:focus {
+  border-color: #1E7A3D !important;
+  outline: none !important;
 }

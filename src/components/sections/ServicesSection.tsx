@@ -20,44 +20,39 @@ export default function ServicesSection() {
   return (
     <section
       style={{
-        background: "#F2E8DC",
-        color: "#16120F",
-        padding: "104px 0",
+        background: "#FBF4E6",
+        color: "#16130E",
+        padding: "100px 0",
       }}
     >
-      <div
-        style={{
-          maxWidth: 1200,
-          margin: "0 auto",
-          padding: "0 64px",
-        }}
-      >
+      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 48px" }}>
         <p
           style={{
             margin: 0,
-            fontFamily: "var(--font-utility)",
-            fontSize: 13,
-            fontWeight: 500,
-            letterSpacing: "0.2em",
+            fontFamily: "var(--font-display)",
+            fontSize: 15,
+            fontWeight: 600,
+            letterSpacing: "0.18em",
             textTransform: "uppercase",
-            color: "#9C7A4B",
+            color: "#E01E26",
           }}
         >
           Ne yapıyoruz
         </p>
         <h2
           style={{
-            margin: "14px 0 0",
+            margin: "12px 0 0",
             fontFamily: "var(--font-display)",
-            fontSize: "clamp(32px, 4.5vw, 48px)",
-            lineHeight: 1.06,
-            letterSpacing: "-0.01em",
+            fontWeight: 700,
+            fontSize: "clamp(36px, 5vw, 60px)",
+            lineHeight: 0.98,
+            letterSpacing: "0.01em",
             textTransform: "uppercase",
-            color: "#16120F",
-            maxWidth: 620,
+            color: "#16130E",
+            maxWidth: 640,
           }}
         >
-          Dört hizmet, tek ekip
+          Üç sahne, tek ekip
         </h2>
 
         <div
@@ -65,40 +60,46 @@ export default function ServicesSection() {
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
             gap: 20,
-            marginTop: 52,
+            marginTop: 48,
           }}
         >
           {services.map((s) => (
             <div
               key={s.num}
-              className="kz-card"
+              className="kz-service-card"
               style={{
-                border: "1px solid rgba(22,18,15,0.18)",
-                borderRadius: 8,
-                background: "rgba(255,250,243,0.6)",
+                border: "2px solid #16130E",
+                borderRadius: 16,
+                background: "#ffffff",
                 padding: "32px 28px",
               }}
             >
-              <p
+              <span
                 style={{
-                  margin: 0,
-                  fontFamily: "var(--font-utility)",
-                  fontSize: 13,
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  width: 44,
+                  height: 44,
+                  borderRadius: "50%",
+                  background: "#E01E26",
+                  color: "#FBF4E6",
+                  fontFamily: "var(--font-display)",
                   fontWeight: 700,
-                  letterSpacing: "0.12em",
-                  color: "#9C7A4B",
+                  fontSize: 19,
                 }}
               >
                 {s.num}
-              </p>
+              </span>
               <h3
                 style={{
-                  margin: "16px 0 0",
+                  margin: "18px 0 0",
                   fontFamily: "var(--font-display)",
-                  fontSize: 24,
+                  fontWeight: 700,
+                  fontSize: 27,
                   letterSpacing: "0.01em",
                   textTransform: "uppercase",
-                  color: "#16120F",
+                  color: "#16130E",
                 }}
               >
                 {s.title}
@@ -108,7 +109,7 @@ export default function ServicesSection() {
                   margin: "12px 0 0",
                   fontSize: 16,
                   lineHeight: 1.6,
-                  color: "rgba(22,18,15,0.75)",
+                  color: "rgba(22,19,14,0.72)",
                 }}
               >
                 {s.body}

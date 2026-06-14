@@ -8,27 +8,28 @@ const initialState: FormState = {
   message: "",
 };
 
-const inputStyle = {
+const inputStyle: React.CSSProperties = {
   width: "100%",
-  boxSizing: "border-box" as const,
+  boxSizing: "border-box",
   minHeight: 48,
-  background: "#16120F",
-  border: "1px solid rgba(242,232,220,0.15)",
-  borderRadius: 8,
-  color: "#F2E8DC",
+  background: "#FBF4E6",
+  border: "2px solid rgba(22,19,14,0.2)",
+  borderRadius: 10,
+  color: "#16130E",
   padding: "12px 14px",
   fontFamily: "var(--font-body)",
   fontSize: 15,
-  colorScheme: "dark" as const,
+  outline: "none",
+  transition: "border-color 150ms ease-out",
 };
 
-const labelStyle = {
-  fontFamily: "var(--font-utility)",
+const labelStyle: React.CSSProperties = {
+  fontFamily: "var(--font-display)",
   fontSize: 12,
-  fontWeight: 500,
-  letterSpacing: "0.14em",
-  textTransform: "uppercase" as const,
-  color: "rgba(242,232,220,0.6)",
+  fontWeight: 600,
+  letterSpacing: "0.16em",
+  textTransform: "uppercase",
+  color: "rgba(22,19,14,0.6)",
 };
 
 export default function ContactForm() {
@@ -41,105 +42,100 @@ export default function ContactForm() {
     <form
       action={formAction}
       style={{
-        background: "#2A211B",
-        border: "1px solid rgba(242,232,220,0.1)",
-        borderRadius: 8,
-        padding: 36,
+        background: "#ffffff",
+        border: "2px solid #16130E",
+        borderRadius: 18,
+        padding: "40px 36px",
+        boxShadow: "10px 10px 0 #E01E26",
         display: "flex",
         flexDirection: "column",
         gap: 22,
       }}
     >
       {/* Ad Soyad + Telefon */}
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gap: 18,
-        }}
-      >
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 18 }}>
         <label style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-          <span style={labelStyle}>Ad Soyad</span>
+          <span style={labelStyle}>Ad Soyad *</span>
           <input
             type="text"
             name="ad"
             required
             placeholder="Adınız"
-            className="kz-input"
+            className="kz-form-input"
             style={inputStyle}
           />
           {state.errors?.ad && (
-            <span style={{ fontSize: 12, color: "#DC2626" }}>
-              {state.errors.ad[0]}
-            </span>
+            <span style={{ fontSize: 12, color: "#E01E26" }}>{state.errors.ad[0]}</span>
           )}
         </label>
 
         <label style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-          <span style={labelStyle}>Telefon</span>
+          <span style={labelStyle}>Telefon *</span>
           <input
             type="tel"
             name="telefon"
             required
             placeholder="+90 5__ ___ __ __"
-            className="kz-input"
+            className="kz-form-input"
             style={inputStyle}
           />
           {state.errors?.telefon && (
-            <span style={{ fontSize: 12, color: "#DC2626" }}>
-              {state.errors.telefon[0]}
-            </span>
+            <span style={{ fontSize: 12, color: "#E01E26" }}>{state.errors.telefon[0]}</span>
           )}
         </label>
       </div>
 
-      {/* E-posta */}
-      <label style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-        <span style={labelStyle}>E-posta</span>
-        <input
-          type="email"
-          name="eposta"
-          placeholder="ornek@eposta.com"
-          className="kz-input"
-          style={inputStyle}
-        />
-      </label>
-
-      {/* Etkinlik türü + Kişi sayısı + Tarih */}
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr 1fr",
-          gap: 18,
-        }}
-      >
+      {/* Firma + E-posta */}
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 18 }}>
         <label style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-          <span style={labelStyle}>Etkinlik türü</span>
+          <span style={labelStyle}>Firma (opsiyonel)</span>
+          <input
+            type="text"
+            name="firma"
+            placeholder="Şirket / organizasyon"
+            className="kz-form-input"
+            style={inputStyle}
+          />
+        </label>
+
+        <label style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+          <span style={labelStyle}>E-posta</span>
+          <input
+            type="email"
+            name="eposta"
+            placeholder="ornek@eposta.com"
+            className="kz-form-input"
+            style={inputStyle}
+          />
+        </label>
+      </div>
+
+      {/* Etkinlik türü + Kişi + Tarih */}
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 18 }}>
+        <label style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+          <span style={labelStyle}>Hizmet türü</span>
           <select
             name="tur"
-            className="kz-select"
+            className="kz-form-input"
             style={inputStyle}
           >
-            <option>Festival</option>
-            <option>Konser</option>
-            <option>Kurumsal</option>
-            <option>Özel gün</option>
+            <option value="">Seçin</option>
+            <option>Festival / Konser Standı</option>
+            <option>Yerinde Döner Kesimi</option>
+            <option>Özel Gün</option>
+            <option>Toplu Yemek</option>
           </select>
         </label>
 
         <label style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-          <span style={labelStyle}>Kişi sayısı</span>
+          <span style={labelStyle}>Tahmini kişi</span>
           <input
             type="number"
             name="kisi"
             min="50"
             placeholder="500"
-            className="kz-input"
-            style={{
-              ...inputStyle,
-              fontFamily: "var(--font-utility)",
-              fontVariantNumeric: "tabular-nums",
-            }}
+            className="kz-form-input"
+            style={{ ...inputStyle, fontVariantNumeric: "tabular-nums" }}
           />
         </label>
 
@@ -148,11 +144,23 @@ export default function ContactForm() {
           <input
             type="date"
             name="tarih"
-            className="kz-input"
-            style={{ ...inputStyle, fontFamily: "var(--font-utility)" }}
+            className="kz-form-input"
+            style={inputStyle}
           />
         </label>
       </div>
+
+      {/* Lokasyon */}
+      <label style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+        <span style={labelStyle}>Şehir / Lokasyon</span>
+        <input
+          type="text"
+          name="lokasyon"
+          placeholder="İstanbul, Bursa, online…"
+          className="kz-form-input"
+          style={inputStyle}
+        />
+      </label>
 
       {/* Mesaj */}
       <label style={{ display: "flex", flexDirection: "column", gap: 8 }}>
@@ -160,14 +168,9 @@ export default function ContactForm() {
         <textarea
           name="mesaj"
           rows={4}
-          placeholder="Etkinliğin yeri, saati, beklenen kalabalık…"
-          className="kz-input"
-          style={{
-            ...inputStyle,
-            minHeight: "auto",
-            lineHeight: 1.6,
-            resize: "vertical",
-          }}
+          placeholder="Etkinliğin yeri, saati, beklenen kalabalık, özel istekler…"
+          className="kz-form-input"
+          style={{ ...inputStyle, minHeight: "auto", lineHeight: 1.6, resize: "vertical" }}
         />
       </label>
 
@@ -180,16 +183,16 @@ export default function ContactForm() {
         autoComplete="off"
       />
 
-      {/* Success / Error message */}
+      {/* State message */}
       {state.message && (
         <p
           style={{
             margin: 0,
-            fontFamily: "var(--font-utility)",
+            fontFamily: "var(--font-display)",
             fontSize: 14,
-            fontWeight: 500,
+            fontWeight: 600,
             letterSpacing: "0.06em",
-            color: state.success ? "#22C55E" : "#DC2626",
+            color: state.success ? "#1E7A3D" : "#E01E26",
           }}
         >
           {state.message}
@@ -199,25 +202,25 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={isPending}
-        className="kz-btn-ember"
         style={{
           display: "inline-flex",
           alignItems: "center",
           justifyContent: "center",
+          alignSelf: "flex-start",
           minHeight: 52,
-          padding: "16px 36px",
-          background: "#DC2626",
-          color: "#16120F",
+          padding: "14px 36px",
+          background: "#1E7A3D",
+          color: "#FBF4E6",
           border: "none",
-          borderRadius: 8,
-          fontFamily: "var(--font-utility)",
-          fontSize: 14,
-          fontWeight: 500,
-          letterSpacing: "0.12em",
+          borderRadius: 999,
+          fontFamily: "var(--font-display)",
+          fontSize: 16,
+          fontWeight: 600,
+          letterSpacing: "0.06em",
           textTransform: "uppercase",
           cursor: isPending ? "not-allowed" : "pointer",
-          alignSelf: "flex-start",
           opacity: isPending ? 0.7 : 1,
+          transition: "transform 150ms ease-out, background 150ms ease-out",
         }}
       >
         {isPending ? "Gönderiliyor…" : "Teklif İste"}

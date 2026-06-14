@@ -5,23 +5,12 @@ export default function SchedulePreview() {
   const preview = events.slice(0, 3);
 
   return (
-    <section
-      style={{
-        background: "#16120F",
-        padding: "104px 0",
-      }}
-    >
-      <div
-        style={{
-          maxWidth: 1200,
-          margin: "0 auto",
-          padding: "0 64px",
-        }}
-      >
+    <section style={{ background: "#16130E", padding: "100px 0" }}>
+      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 48px" }}>
         <div
           style={{
             display: "flex",
-            alignItems: "baseline",
+            alignItems: "flex-end",
             justifyContent: "space-between",
             gap: 24,
             flexWrap: "wrap",
@@ -31,39 +20,40 @@ export default function SchedulePreview() {
             <p
               style={{
                 margin: 0,
-                fontFamily: "var(--font-utility)",
-                fontSize: 13,
-                fontWeight: 500,
-                letterSpacing: "0.2em",
+                fontFamily: "var(--font-display)",
+                fontSize: 15,
+                fontWeight: 600,
+                letterSpacing: "0.18em",
                 textTransform: "uppercase",
-                color: "#9C7A4B",
+                color: "#36A85A",
               }}
             >
               Yaz 2026
             </p>
             <h2
               style={{
-                margin: "14px 0 0",
+                margin: "12px 0 0",
                 fontFamily: "var(--font-display)",
-                fontSize: "clamp(32px, 4.5vw, 48px)",
-                letterSpacing: "-0.01em",
+                fontWeight: 700,
+                fontSize: "clamp(36px, 5vw, 60px)",
+                letterSpacing: "0.01em",
                 textTransform: "uppercase",
-                color: "#F2E8DC",
+                color: "#FBF4E6",
               }}
             >
-              Etkinlik Takvimi
+              Sahne takvimi
             </h2>
           </div>
           <Link
             href="/etkinlikler"
             className="kz-nav-link"
             style={{
-              fontFamily: "var(--font-utility)",
-              fontSize: 13,
-              fontWeight: 500,
-              letterSpacing: "0.12em",
+              fontFamily: "var(--font-display)",
+              fontSize: 15,
+              fontWeight: 600,
+              letterSpacing: "0.08em",
               textTransform: "uppercase",
-              color: "#9C7A4B",
+              color: "#36A85A",
               textDecoration: "none",
               padding: "8px 0",
             }}
@@ -72,57 +62,45 @@ export default function SchedulePreview() {
           </Link>
         </div>
 
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: 14,
-            marginTop: 44,
-          }}
-        >
+        <div style={{ display: "flex", flexDirection: "column", gap: 14, marginTop: 44 }}>
           {preview.map((ev) => (
             <Link
               key={ev.title}
               href="/etkinlikler"
-              className="kz-card"
+              className="kz-event-row"
               style={{
                 display: "flex",
                 alignItems: "center",
-                gap: 28,
-                border: "1px solid rgba(242,232,220,0.12)",
-                borderRadius: 8,
-                background: "#2A211B",
+                gap: 26,
+                border: "2px solid rgba(251,244,230,0.16)",
+                borderRadius: 14,
+                background: "#211A14",
                 padding: "22px 28px",
                 textDecoration: "none",
               }}
             >
               <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  minWidth: 64,
-                }}
+                style={{ display: "flex", flexDirection: "column", alignItems: "center", minWidth: 64 }}
               >
                 <span
                   style={{
-                    fontFamily: "var(--font-utility)",
-                    fontVariantNumeric: "tabular-nums",
-                    fontSize: 32,
+                    fontFamily: "var(--font-display)",
                     fontWeight: 700,
+                    fontVariantNumeric: "tabular-nums",
+                    fontSize: 36,
                     lineHeight: 1,
-                    color: "#DC2626",
+                    color: "#E01E26",
                   }}
                 >
                   {ev.day}
                 </span>
                 <span
                   style={{
-                    fontFamily: "var(--font-utility)",
-                    fontSize: 12,
-                    fontWeight: 500,
+                    fontFamily: "var(--font-display)",
+                    fontSize: 13,
+                    fontWeight: 600,
                     letterSpacing: "0.14em",
-                    color: "#9C7A4B",
+                    color: "#36A85A",
                     marginTop: 4,
                   }}
                 >
@@ -135,29 +113,30 @@ export default function SchedulePreview() {
                   style={{
                     margin: 0,
                     fontFamily: "var(--font-display)",
-                    fontSize: 22,
+                    fontWeight: 700,
+                    fontSize: 24,
                     letterSpacing: "0.01em",
                     textTransform: "uppercase",
-                    color: "#F2E8DC",
+                    color: "#FBF4E6",
                   }}
                 >
                   {ev.title}
                 </p>
                 <p
                   style={{
-                    margin: "6px 0 0",
-                    fontFamily: "var(--font-utility)",
-                    fontSize: 13,
-                    letterSpacing: "0.08em",
-                    textTransform: "uppercase",
-                    color: "rgba(242,232,220,0.55)",
+                    margin: "5px 0 0",
+                    fontFamily: "var(--font-body)",
+                    fontSize: 14,
+                    fontWeight: 500,
+                    letterSpacing: "0.04em",
+                    color: "rgba(251,244,230,0.6)",
                   }}
                 >
                   {ev.location}
                 </p>
               </div>
 
-              <span style={{ fontSize: 20, color: "#9C7A4B" }}>→</span>
+              <span style={{ fontSize: 22, color: "#36A85A" }}>→</span>
             </Link>
           ))}
         </div>

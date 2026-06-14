@@ -3,7 +3,6 @@ import Header from "@/components/ui/Header";
 import Footer from "@/components/ui/Footer";
 import HeroFoto from "@/components/sections/HeroFoto";
 import Marquee from "@/components/sections/Marquee";
-import LineupPoster from "@/components/sections/LineupPoster";
 import ServicesSection from "@/components/sections/ServicesSection";
 import StatsSection from "@/components/sections/StatsSection";
 import SchedulePreview from "@/components/sections/SchedulePreview";
@@ -22,16 +21,15 @@ export default function HomePage() {
       <main>
         <HeroFoto />
         <Marquee />
-        <LineupPoster />
         <ServicesSection />
         <StatsSection />
         <SchedulePreview />
         <CtaBand
-          heading="Etkinliğinizi ayarlayalım"
+          heading="Sahnenizi ayarlayalım"
           subtext="48 saat içinde teklif dönüyoruz"
         />
       </main>
-      <Footer variant="light" />
+      <Footer variant="home" />
     </>
   );
 }

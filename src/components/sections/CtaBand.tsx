@@ -14,15 +14,17 @@ export default function CtaBand({
   return (
     <section
       style={{
-        background: "linear-gradient(90deg, #DC2626, #22C55E)",
-        padding: "72px 0",
+        background: "#1E7A3D",
+        padding: "76px 0",
+        borderTop: "3px solid #16130E",
+        borderBottom: "3px solid #16130E",
       }}
     >
       <div
         style={{
           maxWidth: 1200,
           margin: "0 auto",
-          padding: "0 64px",
+          padding: "0 48px",
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
@@ -35,10 +37,11 @@ export default function CtaBand({
             style={{
               margin: 0,
               fontFamily: "var(--font-display)",
-              fontSize: "clamp(30px, 4vw, 44px)",
-              letterSpacing: "-0.01em",
+              fontWeight: 700,
+              fontSize: "clamp(32px, 4.4vw, 52px)",
+              letterSpacing: "0.01em",
               textTransform: "uppercase",
-              color: "#16120F",
+              color: "#FBF4E6",
             }}
           >
             {heading}
@@ -47,12 +50,12 @@ export default function CtaBand({
             <p
               style={{
                 margin: "10px 0 0",
-                fontFamily: "var(--font-utility)",
-                fontSize: 14,
+                fontFamily: "var(--font-display)",
+                fontSize: 15,
                 fontWeight: 500,
-                letterSpacing: "0.1em",
+                letterSpacing: "0.08em",
                 textTransform: "uppercase",
-                color: "rgba(22,18,15,0.7)",
+                color: "rgba(251,244,230,0.82)",
               }}
             >
               {subtext}
@@ -61,19 +64,19 @@ export default function CtaBand({
         </div>
         <Link
           href="/iletisim"
-          className="kz-btn-dark"
+          className="kz-btn-cream"
           style={{
             display: "inline-flex",
             alignItems: "center",
-            minHeight: 52,
-            padding: "16px 36px",
-            background: "#16120F",
-            color: "#F2E8DC",
-            borderRadius: 8,
-            fontFamily: "var(--font-utility)",
-            fontSize: 14,
-            fontWeight: 500,
-            letterSpacing: "0.12em",
+            minHeight: 54,
+            padding: "16px 38px",
+            background: "#FBF4E6",
+            color: "#16130E",
+            borderRadius: 999,
+            fontFamily: "var(--font-display)",
+            fontSize: 16,
+            fontWeight: 600,
+            letterSpacing: "0.07em",
             textTransform: "uppercase",
             textDecoration: "none",
           }}
