@@ -5,62 +5,50 @@ import CtaBand from "@/components/sections/CtaBand";
 import { siteConfig } from "@/content/site";
 
 export const metadata: Metadata = {
-  title: "Hakkımızda",
+  title: "Hakkımızda — ETASAS",
   description:
-    "Közbaşı'nın hikayesi: İstanbul merkezli festival gastronomi firması. Yerinde döner kesimi, stand kurulumu ve etkinlik yemek hizmeti.",
+    "ETASAS Event Solutions hakkında: Festival ve etkinliklerde yiyecek-içecek operasyonu yöneten İstanbul merkezli firma. Tek muhatap, çoklu marka portföyü.",
 };
 
 const stats = [
+  { value: "7+", label: "Aktif Marka" },
   { value: "120+", label: "Etkinlik" },
-  { value: "250.000+", label: "Porsiyon" },
-  { value: "8", label: "Yıl" },
-  { value: "İstanbul", label: "Merkez" },
+  { value: "8", label: "Yıl Deneyim" },
+  { value: "50.000+", label: "Kapasite" },
 ];
 
-const services = [
-  {
-    title: "Festival & Konser Standları",
-    description:
-      "Etkinlik alanlarında kendi standımızda döner, köfte, kebap, dondurma ve kahve. Her etkinliğe özel stand kurulumu ve operasyon yönetimi.",
-    color: "#DC2626",
-  },
-  {
-    title: "Yerinde Döner Kesimi",
-    description:
-      "Festival ve konser alanlarında canlı döner kesimi — kesim şovu olarak kalabalıkla buluşan, etkinliğin kendisine katan bir deneyim.",
-    color: "#22C55E",
-  },
-  {
-    title: "Özel Günler",
-    description:
-      "Düğün, nişan, kurumsal etkinlik ve açılışlarda yerinde döner kesimi. Misafirlerinize unutulmaz bir gastronomi anı.",
-    color: "#9C7A4B",
-  },
-  {
-    title: "Toplu Yemek",
-    description:
-      "Kurumsal ve etkinlik bazlı toplu yemek hizmeti. Kapasite, menü ve lojistik tamamen sizin ihtiyacınıza göre planlanır.",
-    color: "#DC2626",
-  },
+const highlights = [
+  "Tek sözleşme ile çoklu marka operasyonu",
+  "Stand kurulumu, personel ve stok yönetimi",
+  "Festival, konser, fuar ve kurumsal etkinlikler",
+  "1.000 ila 50.000+ kişilik etkinlik kapasitesi",
+  "Tüketici tarafından bilinen markalar",
 ];
 
 export default function HakkimizdaPage() {
   return (
     <>
       <Header activePage="hakkimizda" />
-      <main style={{ background: "#16120F", color: "#F2E8DC" }}>
-        {/* Hero bölümü */}
-        <section style={{ padding: "88px 64px 80px" }}>
-          <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+      <main>
+        {/* Hero */}
+        <section
+          style={{
+            background: "#E01E26",
+            color: "#FBF4E6",
+            padding: "80px 48px 64px",
+            textAlign: "center",
+          }}
+        >
+          <div style={{ maxWidth: 900, margin: "0 auto" }}>
             <p
               style={{
                 margin: 0,
-                fontFamily: "var(--font-utility)",
-                fontSize: 13,
-                fontWeight: 500,
-                letterSpacing: "0.2em",
+                fontFamily: "var(--font-display)",
+                fontSize: 14,
+                fontWeight: 600,
+                letterSpacing: "0.26em",
                 textTransform: "uppercase",
-                color: "#9C7A4B",
+                color: "#36A85A",
               }}
             >
               {siteConfig.tagline}
@@ -69,247 +57,272 @@ export default function HakkimizdaPage() {
               style={{
                 margin: "16px 0 0",
                 fontFamily: "var(--font-display)",
-                fontSize: "clamp(44px, 7vw, 80px)",
-                lineHeight: 1.02,
-                letterSpacing: "-0.01em",
+                fontWeight: 700,
+                fontSize: "clamp(56px, 10vw, 130px)",
+                lineHeight: 0.88,
+                letterSpacing: "0.02em",
                 textTransform: "uppercase",
-                color: "#F2E8DC",
+                color: "#FBF4E6",
               }}
             >
               Hakkımızda
             </h1>
+          </div>
+        </section>
 
+        {/* Ana metin */}
+        <section style={{ background: "#FBF4E6", padding: "72px 48px 80px" }}>
+          <div
+            style={{
+              maxWidth: 1100,
+              margin: "0 auto",
+              display: "grid",
+              gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1fr)",
+              gap: 64,
+              alignItems: "start",
+            }}
+          >
+            <div>
+              <p
+                style={{
+                  margin: 0,
+                  fontSize: 21,
+                  lineHeight: 1.65,
+                  fontWeight: 500,
+                  color: "#16130E",
+                }}
+              >
+                Başarılı bir etkinlik yalnızca sahneden ibaret değildir. Katılımcı deneyiminin en önemli parçalarından biri yiyecek-içecek alanıdır.
+              </p>
+              <p
+                style={{
+                  margin: "22px 0 0",
+                  fontSize: 17,
+                  lineHeight: 1.75,
+                  color: "rgba(22,19,14,0.7)",
+                }}
+              >
+                ETASAS Event Solutions olarak festival, konser, fuar ve kurumsal etkinliklerde ihtiyaç duyduğunuz yiyecek-içecek markalarını tek noktadan organize ediyoruz.
+              </p>
+              <p
+                style={{
+                  margin: "18px 0 0",
+                  fontSize: 17,
+                  lineHeight: 1.75,
+                  color: "rgba(22,19,14,0.7)",
+                }}
+              >
+                Döner, dürüm, hamburger, kahve, dondurma, meyve suyu ve atıştırmalık kategorilerindeki çözüm ortaklarımızla etkinliğinizin yiyecek-içecek operasyonunu planlıyor, kuruyor ve yönetiyoruz.
+              </p>
+              <p
+                style={{
+                  margin: "18px 0 0",
+                  fontSize: 17,
+                  lineHeight: 1.75,
+                  color: "rgba(22,19,14,0.7)",
+                }}
+              >
+                Siz etkinliğinize odaklanırken, biz ziyaretçilerinize kaliteli ürün ve sorunsuz hizmet sunulmasını sağlıyoruz.
+              </p>
+            </div>
+
+            {/* Öne çıkanlar kutusu */}
             <div
               style={{
-                display: "grid",
-                gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1fr)",
-                gap: 64,
-                marginTop: 56,
-                alignItems: "start",
+                background: "#ffffff",
+                border: "2px solid #16130E",
+                borderRadius: 18,
+                padding: "36px 32px",
+                boxShadow: "10px 10px 0 #1E7A3D",
               }}
             >
-              <div>
-                <p
-                  style={{
-                    margin: 0,
-                    fontSize: 20,
-                    lineHeight: 1.7,
-                    color: "rgba(242,232,220,0.9)",
-                  }}
-                >
-                  Festival alanlarında yemek, sıradan bir ihtiyaç değil — etkinliğin ta kendisi. Biz bunu sekiz yıl önce anladık.
-                </p>
-                <p
-                  style={{
-                    margin: "22px 0 0",
-                    fontSize: 17,
-                    lineHeight: 1.75,
-                    color: "rgba(242,232,220,0.7)",
-                  }}
-                >
-                  Közbaşı, İstanbul merkezli bir festival gastronomi firmasıdır. Festival ve konser alanlarında kendi standlarımızda yiyecek-içecek satışı yapıyor; organizatörlerle, etkinlik planlamacılarıyla ve kurumsal müşterilerle uzun vadeli işbirlikleri kuruyoruz.
-                </p>
-                <p
-                  style={{
-                    margin: "22px 0 0",
-                    fontSize: 17,
-                    lineHeight: 1.75,
-                    color: "rgba(242,232,220,0.7)",
-                  }}
-                >
-                  Standı kurmaktan operasyonu yönetmeye, yerinde döner kesim şovundan toplu yemek lojistiğine kadar her şeyi biz üstleniyoruz. Siz etkinliğinize odaklanın, gastronomi kısmı bizden.
-                </p>
-              </div>
-
-              {/* Sağ — kutulu vurgu */}
-              <div
+              <p
                 style={{
-                  background: "#1C1712",
-                  border: "1px solid rgba(156,122,75,0.3)",
-                  borderRadius: 8,
-                  padding: "44px 40px",
+                  margin: 0,
+                  fontFamily: "var(--font-display)",
+                  fontSize: 12,
+                  fontWeight: 600,
+                  letterSpacing: "0.2em",
+                  textTransform: "uppercase",
+                  color: "rgba(22,19,14,0.5)",
+                }}
+              >
+                Kısaca ETASAS
+              </p>
+              <ul
+                style={{
+                  margin: "22px 0 0",
+                  padding: 0,
+                  listStyle: "none",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 16,
+                }}
+              >
+                {highlights.map((item) => (
+                  <li
+                    key={item}
+                    style={{
+                      display: "flex",
+                      alignItems: "flex-start",
+                      gap: 14,
+                      fontSize: 15,
+                      lineHeight: 1.55,
+                      color: "rgba(22,19,14,0.82)",
+                    }}
+                  >
+                    <span
+                      style={{
+                        flexShrink: 0,
+                        marginTop: 5,
+                        width: 8,
+                        height: 8,
+                        borderRadius: "50%",
+                        background: "#E01E26",
+                        display: "block",
+                      }}
+                    />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* Stats */}
+        <section
+          style={{
+            background: "#E01E26",
+            padding: "72px 48px",
+            borderTop: "3px solid #16130E",
+            borderBottom: "3px solid #16130E",
+          }}
+        >
+          <div
+            style={{
+              maxWidth: 1100,
+              margin: "0 auto",
+              display: "grid",
+              gridTemplateColumns: "repeat(4, 1fr)",
+              gap: 24,
+            }}
+          >
+            {stats.map((stat) => (
+              <div
+                key={stat.label}
+                style={{
+                  borderLeft: "3px solid rgba(251,244,230,0.35)",
+                  paddingLeft: 22,
                 }}
               >
                 <p
                   style={{
                     margin: 0,
-                    fontFamily: "var(--font-utility)",
-                    fontSize: 12,
+                    fontFamily: "var(--font-display)",
                     fontWeight: 700,
-                    letterSpacing: "0.22em",
-                    textTransform: "uppercase",
-                    color: "#9C7A4B",
+                    fontVariantNumeric: "tabular-nums",
+                    fontSize: "clamp(36px, 4.5vw, 58px)",
+                    lineHeight: 0.95,
+                    color: "#FBF4E6",
                   }}
                 >
-                  Bizden kısaca
+                  {stat.value}
                 </p>
-                <ul
+                <p
                   style={{
-                    margin: "22px 0 0",
-                    padding: 0,
-                    listStyle: "none",
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: 16,
+                    margin: "10px 0 0",
+                    fontFamily: "var(--font-display)",
+                    fontSize: 13,
+                    fontWeight: 600,
+                    letterSpacing: "0.14em",
+                    textTransform: "uppercase",
+                    color: "rgba(251,244,230,0.8)",
                   }}
                 >
-                  {[
-                    "İstanbul merkezli, festival odaklı",
-                    "8 yıllık sektör deneyimi",
-                    "Yerinde kesim şovu dahil tam operasyon",
-                    "Festival, konser, özel gün, toplu yemek",
-                    "Stand kurulumundan lojistiğe tek elden",
-                  ].map((item) => (
-                    <li
-                      key={item}
-                      style={{
-                        display: "flex",
-                        alignItems: "flex-start",
-                        gap: 12,
-                        fontSize: 15,
-                        lineHeight: 1.5,
-                        color: "rgba(242,232,220,0.8)",
-                      }}
-                    >
-                      <span
-                        style={{
-                          flexShrink: 0,
-                          marginTop: 3,
-                          width: 8,
-                          height: 8,
-                          borderRadius: "50%",
-                          background: "#DC2626",
-                          display: "block",
-                        }}
-                      />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+                  {stat.label}
+                </p>
               </div>
-            </div>
+            ))}
           </div>
         </section>
 
-        {/* Sayılarla biz */}
-        <section
-          style={{
-            borderTop: "1px solid rgba(242,232,220,0.08)",
-            borderBottom: "1px solid rgba(242,232,220,0.08)",
-            padding: "72px 64px",
-            background: "#1C1712",
-          }}
-        >
-          <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(4, 1fr)",
-                gap: 32,
-              }}
-            >
-              {stats.map((stat) => (
-                <div key={stat.label} style={{ textAlign: "center" }}>
-                  <p
-                    style={{
-                      margin: 0,
-                      fontFamily: "var(--font-display)",
-                      fontSize: "clamp(40px, 5vw, 64px)",
-                      letterSpacing: "0.02em",
-                      textTransform: "uppercase",
-                      color: "#DC2626",
-                      lineHeight: 1,
-                    }}
-                  >
-                    {stat.value}
-                  </p>
-                  <p
-                    style={{
-                      margin: "10px 0 0",
-                      fontFamily: "var(--font-utility)",
-                      fontSize: 12,
-                      fontWeight: 700,
-                      letterSpacing: "0.2em",
-                      textTransform: "uppercase",
-                      color: "#9C7A4B",
-                    }}
-                  >
-                    {stat.label}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Hizmetler */}
-        <section style={{ padding: "96px 64px" }}>
+        {/* Nasıl çalışıyoruz */}
+        <section style={{ background: "#16130E", padding: "80px 48px" }}>
           <div style={{ maxWidth: 1100, margin: "0 auto" }}>
             <p
               style={{
                 margin: 0,
-                fontFamily: "var(--font-utility)",
-                fontSize: 12,
-                fontWeight: 700,
-                letterSpacing: "0.22em",
+                fontFamily: "var(--font-display)",
+                fontSize: 15,
+                fontWeight: 600,
+                letterSpacing: "0.18em",
                 textTransform: "uppercase",
-                color: "#9C7A4B",
+                color: "#36A85A",
               }}
             >
-              Ne yapıyoruz
+              Organizatörün derdi
             </p>
             <h2
               style={{
-                margin: "16px 0 40px",
+                margin: "12px 0 0",
                 fontFamily: "var(--font-display)",
-                fontSize: "clamp(32px, 4.5vw, 52px)",
-                letterSpacing: "-0.01em",
+                fontWeight: 700,
+                fontSize: "clamp(30px, 4.5vw, 52px)",
+                lineHeight: 1,
+                letterSpacing: "0.01em",
                 textTransform: "uppercase",
-                color: "#F2E8DC",
+                color: "#FBF4E6",
+                maxWidth: 680,
               }}
             >
-              Hizmetlerimiz
+              Etkinlik sorunsuz geçecek mi?
             </h2>
-
             <div
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
-                gap: 24,
+                gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+                gap: 20,
+                marginTop: 44,
               }}
             >
-              {services.map((service) => (
+              {[
+                { q: "Sorun çıkaracak mısınız?", a: "Stand kurulumundan kapanışa kadar saha koordinasyonu bizden. Sürpriz yok." },
+                { q: "Kuyruk oluşacak mı?", a: "Yüksek hacimli etkinliklerde test edilmiş markalar ve ekipler. Hızlı servis standart." },
+                { q: "Boş stand kalacak mı?", a: "Personel planlaması ve stok yönetimi operasyon paketine dahil. Aç stand bırakmıyoruz." },
+                { q: "İş yükümü azaltacak mısınız?", a: "Birden fazla tedarikçi yerine tek muhatap. Tüm koordinasyon bizden." },
+              ].map((item) => (
                 <div
-                  key={service.title}
+                  key={item.q}
                   style={{
-                    background: "#1C1712",
-                    border: `1px solid ${service.color}25`,
-                    borderTop: `3px solid ${service.color}`,
-                    borderRadius: 8,
-                    padding: "32px 28px",
+                    border: "2px solid rgba(251,244,230,0.12)",
+                    borderRadius: 14,
+                    background: "#211A14",
+                    padding: "26px 24px",
                   }}
                 >
-                  <h3
+                  <p
                     style={{
                       margin: 0,
                       fontFamily: "var(--font-display)",
-                      fontSize: 20,
-                      letterSpacing: "0.03em",
+                      fontWeight: 700,
+                      fontSize: 18,
+                      letterSpacing: "0.01em",
                       textTransform: "uppercase",
-                      color: "#F2E8DC",
+                      color: "#E01E26",
                     }}
                   >
-                    {service.title}
-                  </h3>
+                    {item.q}
+                  </p>
                   <p
                     style={{
-                      margin: "14px 0 0",
+                      margin: "10px 0 0",
                       fontSize: 15,
                       lineHeight: 1.65,
-                      color: "rgba(242,232,220,0.65)",
+                      color: "rgba(251,244,230,0.72)",
                     }}
                   >
-                    {service.description}
+                    {item.a}
                   </p>
                 </div>
               ))}
@@ -319,7 +332,7 @@ export default function HakkimizdaPage() {
 
         <CtaBand
           heading="Etkinliğinizi birlikte planlayalım"
-          subtext="Festival, konser, kurumsal — teklif almak için yazın"
+          subtext="48 saat içinde teklif dönüyoruz"
         />
       </main>
       <Footer variant="compact" />

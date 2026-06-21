@@ -5,9 +5,9 @@ import CtaBand from "@/components/sections/CtaBand";
 import { events, categoryLabels } from "@/content/events";
 
 export const metadata: Metadata = {
-  title: "Etkinlikler",
+  title: "Etkinlikler — ETASAS",
   description:
-    "Közbaşı'nın katıldığı ve katılacağı festival, konser ve özel günler. 2026 yaz sahne takvimi.",
+    "ETASAS'ın katıldığı ve katılacağı festival, konser ve kurumsal etkinlikler. 2026 yaz sahne takvimi.",
 };
 
 const badgeConfig = {

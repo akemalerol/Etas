@@ -5,9 +5,9 @@ import ContactForm from "@/components/sections/ContactForm";
 import { siteConfig } from "@/content/site";
 
 export const metadata: Metadata = {
-  title: "İletişim — Teklif Al",
+  title: "Teklif Al — ETASAS",
   description:
-    "Festival, konser, kurumsal etkinlik veya özel gün için teklif alın. 48 saat içinde kapasite, menü ve fiyat teklifinizle dönüyoruz.",
+    "Festival, konser, fuar veya kurumsal etkinlik için teklif alın. 48 saat içinde kapasite, marka seçimi ve operasyon teklifinizle dönüyoruz.",
 };
 
 export default function IletisimPage() {

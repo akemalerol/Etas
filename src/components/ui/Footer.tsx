@@ -24,7 +24,7 @@ const Logo = ({ size = 38 }: { size?: number }) => (
         lineHeight: 1,
       }}
     >
-      K
+      E
     </span>
     <span
       style={{
@@ -196,8 +196,8 @@ export default function Footer({ variant = "compact" }: FooterProps) {
                 <a href={`mailto:${siteConfig.email}`} style={{ color: "rgba(251,244,230,0.82)", textDecoration: "none" }} className="kz-nav-link">
                   {siteConfig.email}
                 </a>
-                <span>@kozbasi</span>
-                <span>Bomonti · İstanbul</span>
+                <span>{siteConfig.instagram}</span>
+                <span>{siteConfig.address}</span>
               </div>
             </div>
           </div>

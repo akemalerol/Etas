@@ -4,14 +4,15 @@ import Footer from "@/components/ui/Footer";
 import HeroFoto from "@/components/sections/HeroFoto";
 import Marquee from "@/components/sections/Marquee";
 import ServicesSection from "@/components/sections/ServicesSection";
+import BrandsSection from "@/components/sections/BrandsSection";
 import StatsSection from "@/components/sections/StatsSection";
 import SchedulePreview from "@/components/sections/SchedulePreview";
 import CtaBand from "@/components/sections/CtaBand";
 
 export const metadata: Metadata = {
-  title: "KÖZBAŞI — Festival Gastronomi & Yerinde Döner Kesimi",
+  title: "ETASAS — Festival ve Etkinlikler İçin Yiyecek-İçecek Çözümleri",
   description:
-    "Festival, konser ve özel günlerde yerinde döner kesimi. İstanbul merkezli stand kurulumu, taze malzeme, kesim şov. Teklif için hemen yazın.",
+    "Festival, konser ve kurumsal etkinliklerde yiyecek-içecek operasyonu. Tek sözleşme, tek muhatap, tek operasyon ekibi. Döner, burger, kahve, dondurma ve daha fazlası.",
 };
 
 export default function HomePage() {
@@ -23,9 +24,10 @@ export default function HomePage() {
         <Marquee />
         <ServicesSection />
         <StatsSection />
+        <BrandsSection />
         <SchedulePreview />
         <CtaBand
-          heading="Sahnenizi ayarlayalım"
+          heading="Etkinliğinizi birlikte planlayalım"
           subtext="48 saat içinde teklif dönüyoruz"
         />
       </main>

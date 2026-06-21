@@ -1,6 +1,6 @@
 export default function Marquee() {
   const text =
-    "Yerinde kesim  ◆  Festival  ◆  Konser  ◆  Özel gün  ◆  Kurumsal  ◆  ";
+    "Tek Sözleşme  ◆  Tek Muhatap  ◆  Tek Operasyon Ekibi  ◆  Festival  ◆  Konser  ◆  Kurumsal  ◆  Döner  ◆  Burger  ◆  Kahve  ◆  Dondurma  ◆  Meyve Suyu  ◆  ";
 
   return (
     <div

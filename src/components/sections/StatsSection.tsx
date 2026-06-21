@@ -3,10 +3,10 @@
 import { useEffect, useRef, useState } from "react";
 
 const STATS = [
+  { target: 7, suffix: "+", label: "Aktif marka" },
   { target: 120, suffix: "+", label: "Etkinlik" },
-  { target: 250000, suffix: "+", label: "Porsiyon servis" },
-  { target: 14, suffix: "", label: "Şehir" },
-  { target: 8, suffix: "", label: "Yıl sahnede" },
+  { target: 8, suffix: "", label: "Yıl deneyim" },
+  { target: 50000, suffix: "+", label: "Kapasite / etkinlik" },
 ] as const;
 
 function formatTR(n: number) {

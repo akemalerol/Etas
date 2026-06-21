@@ -6,7 +6,7 @@ type HeaderProps = {
 };
 
 const navItems = [
-  { href: "/menu", label: "Menü", key: "menu" },
+  { href: "/menu", label: "Markalar", key: "menu" },
   { href: "/etkinlikler", label: "Etkinlikler", key: "etkinlikler" },
   { href: "/iletisim", label: "İletişim", key: "iletisim" },
 ] as const;
@@ -57,7 +57,7 @@ export default function Header({ activePage }: HeaderProps) {
                 lineHeight: 1,
               }}
             >
-              K
+              E
             </span>
             <span style={{ display: "flex", flexDirection: "column", lineHeight: 1 }}>
               <span
@@ -83,7 +83,7 @@ export default function Header({ activePage }: HeaderProps) {
                   marginTop: 3,
                 }}
               >
-                Festival Döner
+                Event Solutions
               </span>
             </span>
           </Link>

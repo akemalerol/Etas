@@ -1,18 +1,27 @@
 const services = [
   {
     num: "01",
-    title: "Festival & Konser",
-    body: "Yüksek hacim, hızlı servis. Saatte 600 porsiyon kapasiteli çift stand kurulumu, kendi jeneratörümüzle.",
+    title: "Hazır ve Güçlü Markalar",
+    body: "Tüketici tarafından bilinen ve talep gören markaları tek çatı altında sunuyoruz. Ayrı ayrı marka arayışına gerek yok.",
+    accent: "#E01E26",
   },
   {
     num: "02",
-    title: "Kurumsal & Özel Gün",
-    body: "Lansman, düğün, after-party. Menü etkinliğe göre kurgulanır; servis ekibi ve sunum bize ait.",
+    title: "Operasyon Yönetimi",
+    body: "Stand kurulumu, personel planlaması, stok yönetimi ve saha koordinasyonu tamamen bizim tarafımızdan yürütülür.",
+    accent: "#1E7A3D",
   },
   {
     num: "03",
-    title: "Yerinde Kesim Şov",
-    body: "Usta ve bıçak etkinlikte. Kesim anı etkinliğin kendisi olur — kalabalık standın önünde toplanır.",
+    title: "Tek Muhatap Avantajı",
+    body: "Birden fazla marka ve tedarikçiyle ayrı ayrı görüşmek yerine tüm süreci tek ekip üzerinden yönetebilirsiniz.",
+    accent: "#E01E26",
+  },
+  {
+    num: "04",
+    title: "Ölçeklenebilir Yapı",
+    body: "1.000 kişilik kurumsal organizasyonlardan on binlerce ziyaretçiyi ağırlayan festivallere kadar farklı ölçeklerde çözüm üretiyoruz.",
+    accent: "#1E7A3D",
   },
 ];
 
@@ -37,7 +46,7 @@ export default function ServicesSection() {
             color: "#E01E26",
           }}
         >
-          Ne yapıyoruz
+          Neden ETASAS
         </p>
         <h2
           style={{
@@ -49,18 +58,29 @@ export default function ServicesSection() {
             letterSpacing: "0.01em",
             textTransform: "uppercase",
             color: "#16130E",
-            maxWidth: 640,
+            maxWidth: 700,
           }}
         >
-          Üç sahne, tek ekip
+          Başarılı etkinlik yalnızca sahneden ibaret değil
         </h2>
+        <p
+          style={{
+            margin: "18px 0 0",
+            maxWidth: 520,
+            fontSize: 17,
+            lineHeight: 1.65,
+            color: "rgba(22,19,14,0.7)",
+          }}
+        >
+          Katılımcı deneyiminin en önemli parçalarından biri yiyecek-içecek alanıdır. Doğru marka, doğru operasyon, doğru planlama — ziyaretçi memnuniyetini artırırken organizasyon ekibinin iş yükünü azaltıyoruz.
+        </p>
 
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
             gap: 20,
-            marginTop: 48,
+            marginTop: 56,
           }}
         >
           {services.map((s) => (
@@ -82,7 +102,7 @@ export default function ServicesSection() {
                   width: 44,
                   height: 44,
                   borderRadius: "50%",
-                  background: "#E01E26",
+                  background: s.accent,
                   color: "#FBF4E6",
                   fontFamily: "var(--font-display)",
                   fontWeight: 700,
@@ -96,10 +116,11 @@ export default function ServicesSection() {
                   margin: "18px 0 0",
                   fontFamily: "var(--font-display)",
                   fontWeight: 700,
-                  fontSize: 27,
+                  fontSize: 24,
                   letterSpacing: "0.01em",
                   textTransform: "uppercase",
                   color: "#16130E",
+                  lineHeight: 1.1,
                 }}
               >
                 {s.title}
@@ -107,8 +128,8 @@ export default function ServicesSection() {
               <p
                 style={{
                   margin: "12px 0 0",
-                  fontSize: 16,
-                  lineHeight: 1.6,
+                  fontSize: 15,
+                  lineHeight: 1.65,
                   color: "rgba(22,19,14,0.72)",
                 }}
               >
